@@ -32,9 +32,9 @@ If you have a SQLite3 Database with your files, name it `students.db` and place 
 |/addEntry| name, sid, grade| Adds a new student with the given name, id, and grade |
 
 # Known Dependencies
--python 3
--flask
--SQLite3
+- python 3
+- flask
+- SQLite3
 
 ## Tested versions
 |Software | Version|
