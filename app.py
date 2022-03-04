@@ -167,16 +167,7 @@ def displayDBTable():
 def displayDB():
     output =  "<head><link rel='stylesheet' href='/static/viewPage.css'><script src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous'></script></head><body><div style = 'background-color:black'>"
 
-    tmp = ""
-    colors = ['red', 'blue', 'purple', 'pink', 'yellow', 'green', 'teal']
-    letters = ['S', 'k', 'y', 'e', ' ', 'i', 's', ' ', 'a', ' ', 'm', 'a', 's', 's', 'i', 'v', 'e', ' ', 'c', 'u', 't', 'i', 'e', '!']
-    onColor = 0
-    for a in letters:
-        tmp += "<span style = 'font-size:200%; color:" + colors[onColor%len(colors)] + ";'>" + a + "</span>"
-        onColor += 1
-    pass
-
-    output += tmp
+    
     output += "</div><br><div id = 'tableHere'></div><br><br><br><br><br><a href='/addEntry' class='newStudent'>New Student</a>"
     
     
