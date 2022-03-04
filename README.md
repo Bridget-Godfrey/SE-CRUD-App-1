@@ -1,13 +1,13 @@
 # Getting Started
-Download or pull the files from the repository into the directory on the server in which you which to run the webapp. Install all neccessary prerequsites below, navigate to the directory contianing app.py, then run the following from the CLI.
+Download or pull the files from the repository into the directory on the server in which you which to run the webapp. Install all necessary prerequisites below, navigate to the directory containing app.py, then run the following from the CLI.
 
  Ubuntu:
 
     export FLASK_APP=app && flask run 
 
-From there the webapplication should be running at http://localhost:5000/
+From there the web application should be running at http://localhost:5000/
 
-If you have a SQLite3 Database with your files, name it `students.db` and place it in the directory with app.py, otherwise an empty database will be created for you. Click on a row to edit or delete that entry, click on the "New Student" button to add a new entry.
+If you have a SQLite3 Database with your files, name it `students.db` and place it in the directory with app.py, otherwise, an empty database will be created for you. Click on a row to edit or delete that entry, click on the "New Student" button to add a new entry.
 
 
 
@@ -31,10 +31,10 @@ If you have a SQLite3 Database with your files, name it `students.db` and place 
 |/remove| studentKey| Deletes the entry with the internal id `studentKey`|
 |/addEntry| name, sid, grade| Adds a new student with the given name, id, and grade |
 
-# Known Dependancies
-python 3
-flask
-SQLite3
+# Known Dependencies
+-python 3
+-flask
+-SQLite3
 
 ## Tested versions
 |Software | Version|
@@ -111,3 +111,5 @@ SQLite3
 |Werkzeug | 2.0.3 |
 |zipp | 1.0.0 |
 |zope.interface | 4.7.1 |
+
+
