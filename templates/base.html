@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+<title>{{page_title}}</title>
+{% for src in css_sources: %}
+        <link rel='stylesheet' href='{{src}}'>
+{% endfor %}
+{% block knownCSS%} {% endblock %}
+<script src='https://code.jquery.com/jquery-3.6.0.min.js' integrity='sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=' crossorigin='anonymous'></script>
+</head>
+<body>
+<nav>
+  <h1>{{page_title}}</h1>
+</nav>
+<section class="content">
+
+  {% block content %} {% endblock %}
+</section>
+
+{% for src in js_sources: %}
+        <script src = '{{src}}'></script>
+{% endfor %}
+
+</body>
+</html>

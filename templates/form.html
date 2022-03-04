@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block knownCSS %}
+		<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='formPage.css')}}">
+{% endblock %}
+{% block content %} 
+	<a href="{{url_for('displayDB')}}" class="backBtn">Home</a>
+	<form class="form" method ="post">
+            <div class="textField">
+                <label for="nameField" class="text-label">Name</label>
+                <input type="text" placeholder="Student Name" class="form-control" name="name" {% block studentName %} {% endblock %} access="false" id="nameField">
+            </div>
+            <div class="textField">
+                <label for="idNumber" class="number-label">Student ID Number</label>
+                <input type="number" class="form-control" name="sid" access="false" {% block studentIDNumber %} {% endblock %}  id="idNumber">
+            </div>
+            <div class="textField">
+                <label for="gradeField" class="number-label">Grade</label>
+                <input type="number" class="form-control" name="grade" access="false" min="0" max="100" {% block studentGrade %} {% endblock %} id="gradeField">
+            </div>
+
+            {% block studentKey %} {% endblock %}
+            
+            <button type="submit" value="Submit" class = "submitButton">Submit</button>
+           
+        </form>
+
+{% endblock %}

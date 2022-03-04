@@ -1,0 +1,37 @@
+{% extends 'form.html' %}
+
+
+{% block studentName %} value = "{{ student_name }}"{% endblock %}
+
+
+
+
+
+
+
+
+{% block studentIDNumber %} value = "{{ student_id }}" {% endblock %}
+
+
+
+
+
+
+
+
+{% block studentGrade %} value = "{{ student_grade }}"{% endblock %}
+
+
+
+
+
+{% block studentKey %} 
+            <div style = 'display: none'>
+                
+                <input type="number" class="form-control" name="studentKey" access="false" value = "{{ student_key }}" id="sKey">
+            </div>
+
+
+{% endblock %}
+
+

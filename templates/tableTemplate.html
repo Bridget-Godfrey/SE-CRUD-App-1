@@ -1,0 +1,20 @@
+<table style = 'background-color: white;'>
+<tr style = 'background-color: white;'>
+<th style = 'background-color:lightgrey;'>Name</th>
+<th style = 'background-color:lightgrey;'>ID</th>
+<th style = 'background-color:lightgrey;'>Grade</th></tr>
+
+{% for row in table_rows: %}
+	<tr id = 'row{{row[4]}}' class = 'row{{row[4]}}' style = 'background-color: white; border 1px solid black'>
+	<td id = 'r{{row[4]}}c0' class = 'row{{row[4]}}' style = 'border: 1px solid black; background-color: white;' onclick = 'rowClick("row{{row[4]}}", "nothing");'>{{row[0]}}</td>
+	<td id = 'r{{row[4]}}c1' class = 'row{{row[4]}}' style = 'border: 1px solid black; background-color: white;' onclick = 'rowClick("row{{row[4]}}", "nothing");'>{{row[1]}}</td>
+	<td id = 'r{{row[4]}}c2' class = 'row{{row[4]}}' style = 'border: 1px solid black; background-color: white;' onclick = 'rowClick("row{{row[4]}}", "nothing");'>{{row[2]}}</td>
+	<td id = 'r{{row[4]}}idCol' class = 'row{{row[4]}}' style = 'display: none' onclick = 'rowClick("row{{row[4]}}", "nothing");'>{{row[3]}}</td>
+	<td id = 'r{{row[4]}}btnCol' class = 'btnCol' style = 'display: none; width: 90pt; background-color: white'><span class = 'editBtn' onclick = 'editReq({{row[3]}});'>Edit</span><span class = 'removeBtn' onclick = 'removeReq({{row[3]}});'>Remove</span></td>
+	</tr>
+{% endfor %}
+
+
+
+
+</table>

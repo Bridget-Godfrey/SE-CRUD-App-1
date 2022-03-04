@@ -1,0 +1,10 @@
+{% extends 'update_base.html' %}
+{% block pageHeadding %}
+{% block page_title %}
+Failure!
+{% endblock %}
+{% endblock %}
+{% block errorMSG %} 
+<h2 style = "color:red">Content failed to update! </h2><p>{{debug_stuff}}</p>
+
+{% endblock %}
