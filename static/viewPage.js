@@ -126,3 +126,13 @@ function reloadTable(){
         $.redirectPost(editURL, {studentKey: "" + rowID});
         // $.post(redirectPost(editURL, {studentKey: rowID});
  }
+
+
+
+ window.addEventListener('click', function(e){   
+  if (document.getElementById('mainTable').contains(e.target)){
+    // Clicked in box
+  } else{
+    $(".btnCol").hide();
+  }
+});

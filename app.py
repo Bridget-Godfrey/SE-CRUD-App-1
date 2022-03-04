@@ -21,7 +21,7 @@ def create_connection(p):
 
 
 
-testDB = create_connection("test2.db")
+testDB = create_connection("students.db")
 try:
   testDB.execute("CREATE TABLE IF NOT EXISTS `students` ( `Name` TEXT, `Id` INTEGER, `Points` INTEGER, `studentKey` INTEGER PRIMARY KEY AUTOINCREMENT )")
   testDB.commit()
@@ -57,7 +57,7 @@ def addEntry():
         
         
         try:
-          testDB = create_connection("test2.db")  
+          testDB = create_connection("students.db")  
           testDB.execute("INSERT INTO `students` (`Name`, `Id`, `Points`) VALUES ('" +  str(name) + "', "+  str(studentID)+ ", " + str(grade) + ")")
           testDB.commit()
           testDB.close()
@@ -82,7 +82,7 @@ def edit():
         grade = None
         studentKey = None
         try:
-            testDB = create_connection("test2.db") 
+            testDB = create_connection("students.db") 
             name = request.form['name']
             studentID = request.form['sid']
             grade = request.form['grade']
@@ -92,7 +92,7 @@ def edit():
         
         sqlCmd = "UPDATE `students` SET `Name` = '" + str(name) + "',  `Id` = " + str(studentID) + ",  `Points` = " + str(grade) + " WHERE `studentKey` =" + str(studentKey)
         try:
-            testDB = create_connection("test2.db") 
+            testDB = create_connection("students.db") 
             name = request.form['name']
             studentID = request.form['sid']
             grade = request.form['grade']
@@ -105,7 +105,7 @@ def edit():
             return render_template('update_bad.html', debug_stuff = "" + str(e))
     else: #SHOW STUDENT EDIT FORM 
         studentKey = request.args.get('studentKey')
-        testDB = create_connection("test2.db")
+        testDB = create_connection("students.db")
         csr = testDB.cursor()
         csr.execute("SELECT * FROM `students` WHERE `studentKey` =" + str(studentKey))
         currRow = csr.fetchall()
@@ -128,7 +128,7 @@ def edit():
 def remove():
     if request.method == 'POST':
         try:
-            testDB = create_connection("test2.db") 
+            testDB = create_connection("students.db") 
             studentKey = request.form['studentKey']
             sqlCmd = "DELETE FROM `students` WHERE `studentKey` =" + str(studentKey)
             testDB.execute(sqlCmd)
@@ -144,7 +144,7 @@ def remove():
 
 @app.route("/getTable")
 def displayDBTable():
-    testDB = create_connection("test2.db")
+    testDB = create_connection("students.db")
     csr = testDB.cursor()
     csr.execute("SELECT * FROM `students`")
     currRow = csr.fetchall()
